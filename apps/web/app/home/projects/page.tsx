@@ -81,7 +81,7 @@ export default function AdminProjectsPage() {
     <div className="p-6">
       <h1 className="mb-6 text-2xl font-bold">Quản lý Dự Án</h1>
 
-      <form onSubmit={handleSubmit} className="mb-10 rounded-xl border p-6">
+      <form onSubmit={handleSubmit} className="mb-10 rounded-xl border border-zinc-700 bg-zinc-900/50 p-6">
         <h2 className="mb-4 text-lg font-semibold">Thêm dự án mới</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
@@ -90,7 +90,7 @@ export default function AdminProjectsPage() {
               required
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full rounded border p-2.5 text-sm"
+              className="w-full rounded border border-zinc-700 bg-zinc-900 p-2.5 text-sm text-white placeholder:text-zinc-500"
               placeholder="VD: Biệt thự ABC"
             />
           </div>
@@ -99,7 +99,7 @@ export default function AdminProjectsPage() {
             <input
               value={form.location}
               onChange={(e) => setForm({ ...form, location: e.target.value })}
-              className="w-full rounded border p-2.5 text-sm"
+              className="w-full rounded border border-zinc-700 bg-zinc-900 p-2.5 text-sm text-white placeholder:text-zinc-500"
               placeholder="VD: Hà Nội"
             />
           </div>
@@ -108,9 +108,9 @@ export default function AdminProjectsPage() {
             <select
               value={form.category}
               onChange={(e) => setForm({ ...form, category: e.target.value })}
-              className="w-full rounded border p-2.5 text-sm bg-white text-black"
+              className="w-full rounded border p-2.5 text-sm bg-zinc-900 text-white"
             >
-              {CATEGORIES.map((c) => <option key={c.value} value={c.value} className="text-black bg-white">{c.label}</option>)}
+              {CATEGORIES.map((c) => <option key={c.value} value={c.value} className="bg-zinc-900 text-white">{c.label}</option>)}
             </select>
           </div>
           <div>

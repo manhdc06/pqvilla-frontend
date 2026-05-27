@@ -75,7 +75,7 @@ export default function AdminProductsPage() {
       <h1 className="mb-6 text-2xl font-bold">Quản lý Sản Phẩm</h1>
 
       {/* Add form */}
-      <form onSubmit={handleSubmit} className="mb-10 rounded-xl border p-6">
+      <form onSubmit={handleSubmit} className="mb-10 rounded-xl border border-zinc-700 bg-zinc-900/50 p-6">
         <h2 className="mb-4 text-lg font-semibold">Thêm sản phẩm mới</h2>
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
@@ -84,7 +84,7 @@ export default function AdminProductsPage() {
               required
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
-              className="w-full rounded border p-2.5 text-sm"
+              className="w-full rounded border border-zinc-700 bg-zinc-900 p-2.5 text-sm text-white placeholder:text-zinc-500"
               placeholder="VD: Cửa Mở Quay Nhôm"
             />
           </div>
@@ -93,9 +93,9 @@ export default function AdminProductsPage() {
             <select
               value={form.category}
               onChange={(e) => setForm({ ...form, category: e.target.value })}
-              className="w-full rounded border p-2.5 text-sm bg-white text-black"
+              className="w-full rounded border p-2.5 text-sm bg-zinc-900 text-white"
             >
-              {CATEGORIES.map((c) => <option key={c} className="text-black bg-white">{c}</option>)}
+              {CATEGORIES.map((c) => <option key={c} className="bg-zinc-900 text-white">{c}</option>)}
             </select>
           </div>
           <div className="sm:col-span-2">
@@ -103,7 +103,7 @@ export default function AdminProductsPage() {
             <textarea
               value={form.description}
               onChange={(e) => setForm({ ...form, description: e.target.value })}
-              className="w-full rounded border p-2.5 text-sm"
+              className="w-full rounded border border-zinc-700 bg-zinc-900 p-2.5 text-sm text-white placeholder:text-zinc-500"
               rows={2}
               placeholder="Mô tả ngắn về sản phẩm..."
             />
