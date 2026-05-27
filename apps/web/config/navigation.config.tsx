@@ -1,4 +1,4 @@
-import { Home, User } from 'lucide-react';
+import { FolderOpen, Home, Package, User } from 'lucide-react';
 import { z } from 'zod';
 
 import { NavigationConfigSchema } from '@kit/ui/navigation-schema';
@@ -16,6 +16,16 @@ const routes = [
         path: pathsConfig.app.home,
         Icon: <Home className={iconClasses} />,
         end: true,
+      },
+      {
+        label: 'Sản Phẩm',
+        path: '/home/products',
+        Icon: <Package className={iconClasses} />,
+      },
+      {
+        label: 'Dự Án',
+        path: '/home/projects',
+        Icon: <FolderOpen className={iconClasses} />,
       },
     ],
   },
