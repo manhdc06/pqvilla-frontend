@@ -27,7 +27,7 @@ const NotFoundPage = async () => {
 
   return (
     <div className={'flex h-screen flex-1 flex-col'}>
-      <SiteHeader user={data?.claims} />
+      <SiteHeader />
 
       <div
         className={

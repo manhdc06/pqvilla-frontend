@@ -1,7 +1,5 @@
-export const runtime = 'nodejs';
-
 import type { NextRequest } from 'next/server';
-import { NextResponse, URLPattern } from 'next/server';
+import { NextResponse } from 'next/server';
 
 import { CsrfError, createCsrfProtect } from '@edge-csrf/nextjs';
 
@@ -102,20 +100,16 @@ function isServerAction(request: NextRequest) {
 function getPatterns() {
   return [
     {
-      pattern: new URLPattern({ pathname: '/auth/*?' }),
+      pattern: /^\/auth(\/.*)?$/,
       handler: async (req: NextRequest, res: NextResponse) => {
         const { data } = await getUser(req, res);
 
-        // the user is logged out, so we don't need to do anything
         if (!data?.claims) {
           return;
         }
 
-        // check if we need to verify MFA (user is authenticated but needs to verify MFA)
         const isVerifyMfa = req.nextUrl.pathname === pathsConfig.auth.verifyMfa;
 
-        // If user is logged in and does not need to verify MFA,
-        // redirect to home page.
         if (!isVerifyMfa) {
           return NextResponse.redirect(
             new URL(pathsConfig.app.home, req.nextUrl.origin).href,
@@ -124,14 +118,13 @@ function getPatterns() {
       },
     },
     {
-      pattern: new URLPattern({ pathname: '/home/*?' }),
+      pattern: /^\/home(\/.*)?$/,
       handler: async (req: NextRequest, res: NextResponse) => {
         const { data } = await getUser(req, res);
 
         const origin = req.nextUrl.origin;
         const next = req.nextUrl.pathname;
 
-        // If user is not logged in, redirect to sign in page.
         if (!data?.claims) {
           const signIn = pathsConfig.auth.signIn;
           const redirectPath = `${signIn}?next=${next}`;
@@ -144,7 +137,6 @@ function getPatterns() {
         const requiresMultiFactorAuthentication =
           await checkRequiresMultiFactorAuthentication(supabase);
 
-        // If user requires multi-factor authentication, redirect to MFA page.
         if (requiresMultiFactorAuthentication) {
           return NextResponse.redirect(
             new URL(pathsConfig.auth.verifyMfa, origin).href,
@@ -155,18 +147,13 @@ function getPatterns() {
   ];
 }
 
-/**
- * Match URL patterns to specific handlers.
- * @param url
- */
 function matchUrlPattern(url: string) {
   const patterns = getPatterns();
   const input = url.split('?')[0];
+  const pathname = new URL(input, 'http://localhost').pathname;
 
   for (const pattern of patterns) {
-    const patternResult = pattern.pattern.exec(input);
-
-    if (patternResult !== null && 'pathname' in patternResult) {
+    if (pattern.pattern.test(pathname)) {
       return pattern.handler;
     }
   }

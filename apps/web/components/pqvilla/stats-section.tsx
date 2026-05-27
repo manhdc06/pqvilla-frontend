@@ -18,7 +18,7 @@ function StatCounter({ target, suffix }: { target: number; suffix: string }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !started.current) {
+        if (entry?.isIntersecting && !started.current) {
           started.current = true;
           let start = 0;
           const step = target / 60;
