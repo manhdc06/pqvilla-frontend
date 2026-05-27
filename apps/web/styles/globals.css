@@ -4,9 +4,6 @@
 * Global styles for the entire application
  */
 
-/* PQ VILLA Google Fonts - phải đứng đầu */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
-
 /* Tailwind CSS */
 @import 'tailwindcss';
 
@@ -44,8 +41,8 @@
   --pq-glass-border: rgba(255,255,255,0.1);
   --pq-gold-glow: 0 0 30px rgba(200,155,94,0.3);
   --pq-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --pq-font-heading: 'Cormorant Garamond', Georgia, serif;
-  --pq-font-body: 'Montserrat', -apple-system, sans-serif;
+  --pq-font-heading: var(--font-heading), Georgia, serif;
+  --pq-font-body: var(--font-sans), -apple-system, sans-serif;
 }
 
 @layer base {

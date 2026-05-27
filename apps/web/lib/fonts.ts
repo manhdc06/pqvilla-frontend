@@ -1,23 +1,20 @@
-import { Inter as SansFont } from 'next/font/google';
+import { Cormorant_Garamond, Montserrat } from 'next/font/google';
 
-/**
- * @sans
- * @description Define here the sans font.
- * By default, it uses the Inter font from Google Fonts.
- */
-const sans = SansFont({
-  subsets: ['latin'],
+const sans = Montserrat({
+  subsets: ['latin', 'vietnamese'],
   variable: '--font-sans',
-  fallback: ['system-ui', 'Helvetica Neue', 'Helvetica', 'Arial'],
+  fallback: ['-apple-system', 'system-ui', 'sans-serif'],
   preload: true,
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '600', '700', '800'],
 });
 
-/**
- * @heading
- * @description Define here the heading font.
- */
-const heading = sans;
+const heading = Cormorant_Garamond({
+  subsets: ['latin', 'vietnamese'],
+  variable: '--font-heading',
+  fallback: ['Georgia', 'serif'],
+  preload: true,
+  weight: ['400', '600', '700'],
+  style: ['normal', 'italic'],
+});
 
-// we export these fonts into the root layout
 export { sans, heading };
