@@ -1,0 +1,28 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+
+from app.config import settings
+from app.routers import auth, products, projects
+
+app = FastAPI(
+    title="PQ VILLA API",
+    description="Backend API cho website nhôm kính PQ VILLA",
+    version="1.0.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.cors_origins_list,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.include_router(auth.router)
+app.include_router(products.router)
+app.include_router(projects.router)
+
+
+@app.get("/health")
+async def health():
+    return {"status": "ok", "service": "PQ VILLA API"}
