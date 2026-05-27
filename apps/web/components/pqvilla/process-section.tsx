@@ -1,3 +1,5 @@
+'use client';
+
 const STEPS = [
   { num: '01', title: 'Khảo Sát', desc: 'Khảo sát thực tế, tư vấn giải pháp phù hợp' },
   { num: '02', title: 'Báo Giá', desc: 'Báo giá chi tiết, rõ ràng, minh bạch' },
