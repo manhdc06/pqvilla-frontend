@@ -108,9 +108,9 @@ export default function AdminProjectsPage() {
             <select
               value={form.category}
               onChange={(e) => setForm({ ...form, category: e.target.value })}
-              className="w-full rounded border p-2.5 text-sm"
+              className="w-full rounded border p-2.5 text-sm bg-white text-black"
             >
-              {CATEGORIES.map((c) => <option key={c.value} value={c.value}>{c.label}</option>)}
+              {CATEGORIES.map((c) => <option key={c.value} value={c.value} className="text-black bg-white">{c.label}</option>)}
             </select>
           </div>
           <div>
