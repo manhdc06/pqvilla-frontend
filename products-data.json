@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "name": "Cửa Mở Quay Nhôm Cao Cấp",
+      "category": "CỬA NHÔM",
+      "description": "Hệ cửa mở quay nhôm cao cấp với thiết kế hiện đại, độ bền vượt trội, phù hợp cho biệt thự và nhà phố.",
+      "image": "images/products/cua-mo-quay.png"
+    },
+    {
+      "name": "Cửa Lùa Nhôm Kính",
+      "category": "CỬA NHÔM",
+      "description": "Cửa lùa vận hành êm ái, tiết kiệm không gian, thích hợp cho phòng khách và ban công.",
+      "image": "images/products/cua-lua.png"
+    },
+    {
+      "name": "Vách Kính Văn Phòng",
+      "category": "VÁCH KÍNH",
+      "description": "Giải pháp tối ưu cho văn phòng, nhà ở hiện đại với kính cường lực an toàn.",
+      "image": "images/products/vach-kinh.png"
+    },
+    {
+      "name": "áo",
+      "category": "CỬA NHÔM",
+      "description": "Sản phẩm nhôm kính cao cấp.",
+      "image": "images/products/aifc5912ef.png"
+    },
+    {
+      "name": "Nhà Vua",
+      "category": "KHÁC",
+      "description": "Đẳng cấp promax",
+      "image": "images/products/52d8e5f8-a950-4556-8c89-6c1eb2259cbe.jpeg"
+    }
+  ]
+}
