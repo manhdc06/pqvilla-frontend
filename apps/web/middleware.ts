@@ -149,7 +149,7 @@ function getPatterns() {
 
 function matchUrlPattern(url: string) {
   const patterns = getPatterns();
-  const input = url.split('?')[0];
+  const input = url.split('?')[0] ?? url;
   const pathname = new URL(input, 'http://localhost').pathname;
 
   for (const pattern of patterns) {
