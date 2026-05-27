@@ -4,20 +4,23 @@
 * Global styles for the entire application
  */
 
+/* PQ VILLA Google Fonts - phải đứng đầu */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600;1,700&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
 /* Tailwind CSS */
 @import 'tailwindcss';
 
-/* local styles - update the below if you add a new style */
+/* local styles */
 @import './theme.css';
 @import './theme.utilities.css';
 @import './shadcn-ui.css';
 @import './markdoc.css';
 @import './makerkit.css';
 
-/* plugins - update the below if you add a new plugin */
+/* plugins */
 @plugin "tailwindcss-animate";
 
-/* content sources - update the below if you add a new path */
+/* content sources */
 @source "../../../packages/*/src/**/*.{ts,tsx}";
 @source "../../../packages/features/*/src/**/*.{ts,tsx}";
 @source "../../../packages/billing/*/src/**/*.{ts,tsx}";
@@ -25,8 +28,25 @@
 @source "../../../packages/cms/*/src/**/*.{ts,tsx}";
 @source "../{app,components,config,lib}/**/*.{ts,tsx}";
 
-/* variants - update the below if you add a new variant */
+/* variants */
 @variant dark (&:where(.dark, .dark *));
+
+/* PQ VILLA CSS Variables */
+:root {
+  --pq-bg-primary: #070B12;
+  --pq-bg-secondary: #0D1522;
+  --pq-accent: #C89B5E;
+  --pq-accent-light: #D4AF6E;
+  --pq-accent-dark: #A67C3D;
+  --pq-text-primary: #FFFFFF;
+  --pq-text-secondary: #B5BDC9;
+  --pq-glass-bg: rgba(255,255,255,0.05);
+  --pq-glass-border: rgba(255,255,255,0.1);
+  --pq-gold-glow: 0 0 30px rgba(200,155,94,0.3);
+  --pq-transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --pq-font-heading: 'Cormorant Garamond', Georgia, serif;
+  --pq-font-body: 'Montserrat', -apple-system, sans-serif;
+}
 
 @layer base {
   body {
