@@ -27,11 +27,11 @@ export function CtaSection({ onOpenModal }: { onOpenModal: () => void }) {
             NHẬN TƯ VẤN NGAY
           </button>
           <a
-            href="tel:0962777317"
+            href="tel:0825888222"
             className="flex items-center gap-2 rounded border-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5 hover:bg-black hover:text-white"
             style={{ borderColor: 'var(--pq-bg-primary)', color: 'var(--pq-bg-primary)' }}
           >
-            📞 0962 777 317
+            📞 0825.888.222
           </a>
         </div>
       </div>

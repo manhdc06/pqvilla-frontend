@@ -68,7 +68,8 @@ export function PqSiteFooter() {
           {/* Support */}
           <div>
             <h4 className="mb-5 text-sm font-bold tracking-wide uppercase text-white">Hỗ Trợ</h4>
-            {['Chính sách bảo hành', 'Hướng dẫn sử dụng', 'Thanh toán', 'Câu hỏi thường gặp'].map((t) => (
+            <Link href="/bao-hanh" className="block py-0.5 text-sm leading-loose transition-colors duration-300 hover:text-[#C89B5E]" style={{ color: 'var(--pq-text-secondary)' }}>Chính sách bảo hành</Link>
+            {['Hướng dẫn sử dụng', 'Thanh toán', 'Câu hỏi thường gặp'].map((t) => (
               <Link key={t} href="#" className="block py-0.5 text-sm leading-loose transition-colors duration-300 hover:text-[#C89B5E]" style={{ color: 'var(--pq-text-secondary)' }}>{t}</Link>
             ))}
           </div>
@@ -89,7 +90,7 @@ export function PqSiteFooter() {
               </div>
               <div className="flex items-center gap-2.5 text-sm" style={{ color: 'var(--pq-text-secondary)' }}>
                 <span style={{ color: 'var(--pq-accent)' }}>📞</span>
-                <a href="tel:0962777317" className="transition-colors hover:text-[#C89B5E]">0962 777 317</a>
+                <a href="tel:0825888222" className="transition-colors hover:text-[#C89B5E]">0825.888.222</a>
               </div>
             </div>
           </div>

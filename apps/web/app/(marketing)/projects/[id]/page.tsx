@@ -109,11 +109,11 @@ export default function ProjectDetailPage() {
               Liên hệ tư vấn
             </button>
             <a
-              href="tel:0962777317"
+              href="tel:0825888222"
               className="w-full rounded-full border px-6 py-3.5 text-center text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5"
               style={{ borderColor: 'var(--pq-accent)', color: 'var(--pq-accent)' }}
             >
-              📞 0962 777 317
+              📞 0825.888.222
             </a>
           </div>
         </div>

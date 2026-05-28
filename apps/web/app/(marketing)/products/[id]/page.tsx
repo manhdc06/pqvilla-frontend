@@ -117,11 +117,11 @@ export default function ProductDetailPage() {
                 Liên hệ báo giá
               </button>
               <a
-                href="tel:0962777317"
+                href="tel:0825888222"
                 className="rounded-full border px-8 py-3.5 text-sm font-semibold tracking-wide uppercase transition-all duration-300 hover:-translate-y-0.5"
                 style={{ borderColor: 'var(--pq-accent)', color: 'var(--pq-accent)' }}
               >
-                📞 0962 777 317
+                📞 0825.888.222
               </a>
             </div>
           </div>

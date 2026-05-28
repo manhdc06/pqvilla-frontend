@@ -18,7 +18,7 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
       onClick={onClose}
     >
       <div
-        className="relative w-[90%] max-w-[420px] rounded-2xl p-12 text-center"
+        className="relative w-[90%] max-w-[500px] rounded-2xl p-8 text-center"
         style={{ background: 'var(--pq-bg-secondary)', border: '1px solid var(--pq-glass-border)' }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -43,27 +43,38 @@ export function ContactModal({ open, onClose }: { open: boolean; onClose: () => 
         </div>
 
         <h3
-          className="mb-3 text-3xl font-bold"
+          className="mb-2 text-2xl font-bold"
           style={{ fontFamily: 'var(--pq-font-heading)', color: 'var(--pq-text-primary)' }}
         >
           Liên hệ tư vấn
         </h3>
-        <p className="mb-5 text-sm leading-relaxed" style={{ color: 'var(--pq-text-secondary)' }}>
-          Gọi ngay cho chúng tôi để được tư vấn miễn phí về giải pháp nhôm kính cao cấp!
+        <p className="mb-4 text-sm leading-relaxed" style={{ color: 'var(--pq-text-secondary)' }}>
+          Gọi ngay để được tư vấn miễn phí về giải pháp nhôm kính cao cấp!
         </p>
-        <div
-          className="mb-5 text-4xl font-bold tracking-widest"
-          style={{ fontFamily: 'var(--pq-font-heading)', color: 'var(--pq-accent)' }}
-        >
-          0962 777 317
+
+        <div className="mb-4 flex flex-col gap-2 sm:flex-row">
+          <a href="tel:0825888222"
+            className="flex flex-1 items-center justify-center gap-2 rounded-xl py-3.5 text-base font-bold transition-all hover:opacity-90"
+            style={{ background: 'var(--pq-accent)', color: 'var(--pq-bg-primary)' }}>
+            📞 0825.888.222
+          </a>
+          <a href="tel:0964604386"
+            className="flex flex-1 items-center justify-center gap-2 rounded-xl border py-3.5 text-base font-bold transition-all hover:opacity-90"
+            style={{ borderColor: 'var(--pq-accent)', color: 'var(--pq-accent)' }}>
+            📞 0964.604.386
+          </a>
         </div>
-        <a
-          href="tel:0962777317"
-          className="flex w-full items-center justify-center gap-2 rounded-lg py-4 text-base font-semibold tracking-wide uppercase transition-all duration-300 hover:opacity-90"
-          style={{ background: 'var(--pq-accent)', color: 'var(--pq-bg-primary)' }}
-        >
-          📞 GỌI NGAY
-        </a>
+
+        <div className="rounded-xl p-4 text-left" style={{ background: 'rgba(200,155,94,0.08)', border: '1px solid rgba(200,155,94,0.2)' }}>
+          <p className="mb-2 text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--pq-accent)' }}>Cam kết chất lượng</p>
+          <ul className="space-y-1 text-xs leading-relaxed" style={{ color: 'var(--pq-text-secondary)' }}>
+            <li>• Nhôm Xingfa Quảng Đông bảo hành <strong style={{ color: 'var(--pq-text-primary)' }}>5 năm</strong> bong tróc bề mặt sơn</li>
+            <li>• Nhôm Xingfa PMA bảo hành <strong style={{ color: 'var(--pq-text-primary)' }}>15 năm</strong> bong tróc bề mặt sơn</li>
+            <li>• Nhôm Maxpro bảo hành <strong style={{ color: 'var(--pq-text-primary)' }}>25 năm</strong> bong tróc bề mặt sơn</li>
+            <li>• Bảo hành công trình <strong style={{ color: 'var(--pq-text-primary)' }}>12 tháng</strong>, xử lý sự cố trong 48 giờ</li>
+            <li>• Hàng đạt tiêu chuẩn loại 1 — phát hiện hàng giả đền bù <strong style={{ color: 'var(--pq-text-primary)' }}>100% hợp đồng</strong></li>
+          </ul>
+        </div>
       </div>
     </div>
   );

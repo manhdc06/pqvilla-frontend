@@ -45,11 +45,11 @@ export function SiteHeader() {
             Đăng nhập
           </a>
           <a
-            href="tel:0962777317"
+            href="tel:0825888222"
             className="rounded-full border px-6 py-2.5 text-sm font-semibold transition-all duration-300"
             style={{ borderColor: '#C89B5E', color: '#C89B5E' }}
           >
-            📞 0962 777 317
+            📞 0825.888.222
           </a>
         </div>
       </div>
