@@ -36,13 +36,22 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-[1200px] items-center justify-between px-5">
         <AppLogo />
         <SiteNavigation />
-        <a
-          href="tel:0962777317"
-          className="hidden items-center gap-2 rounded-full border px-6 py-2.5 text-sm font-semibold transition-all duration-300 md:inline-flex"
-          style={{ borderColor: '#C89B5E', color: '#C89B5E' }}
-        >
-          📞 0962 777 317
-        </a>
+        <div className="hidden items-center gap-3 md:flex">
+          <a
+            href="/auth/sign-in"
+            className="rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300"
+            style={{ color: '#C89B5E', border: '1px solid rgba(200,155,94,0.4)' }}
+          >
+            Đăng nhập
+          </a>
+          <a
+            href="tel:0962777317"
+            className="rounded-full border px-6 py-2.5 text-sm font-semibold transition-all duration-300"
+            style={{ borderColor: '#C89B5E', color: '#C89B5E' }}
+          >
+            📞 0962 777 317
+          </a>
+        </div>
       </div>
     </header>
   );
