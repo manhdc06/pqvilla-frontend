@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { API_URL } from '~/lib/api';
+
 interface Product {
   id: number;
   name: string;
@@ -17,8 +19,7 @@ export function ProductsSection() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
-    fetch(`${apiUrl}/api/products?limit=6`)
+    fetch(`${API_URL}/api/products?limit=6`)
       .then((r) => r.json())
       .then((data) => setProducts(data))
       .catch(() => setProducts([]))

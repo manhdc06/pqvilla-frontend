@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
+import { API_URL } from '~/lib/api';
+
 interface Project {
   id: number;
   name: string;
@@ -26,7 +28,7 @@ export function ProjectsSection() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
+    const apiUrl = API_URL;
     fetch(`${apiUrl}/api/projects`)
       .then((r) => r.json())
       .then((data) => setProjects(data))

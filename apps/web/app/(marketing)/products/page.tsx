@@ -2,6 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
+
+import { API_URL } from '~/lib/api';
 
 interface Product {
   id: number;
@@ -25,8 +28,7 @@ export default function ProductsPage() {
   const [filter, setFilter] = useState('all');
 
   useEffect(() => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000';
-    fetch(`${apiUrl}/api/products`)
+    fetch(`${API_URL}/api/products`)
       .then((r) => r.json())
       .then((data) => setProducts(data))
       .catch(() => setProducts([]))
@@ -84,15 +86,16 @@ export default function ProductsPage() {
         ) : (
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
             {filtered.map((p) => (
-              <div
+              <Link
                 key={p.id}
-                className="cursor-pointer rounded-xl border p-5 transition-all duration-300 hover:-translate-y-2"
+                href={`/products/${p.id}`}
+                className="group rounded-xl border p-5 transition-all duration-300 hover:-translate-y-2 block"
                 style={{ background: 'var(--pq-glass-bg)', borderColor: 'var(--pq-glass-border)' }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--pq-accent)'; (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--pq-gold-glow)'; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--pq-glass-border)'; (e.currentTarget as HTMLDivElement).style.boxShadow = 'none'; }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--pq-accent)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'var(--pq-gold-glow)'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--pq-glass-border)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none'; }}
               >
                 <div className="mb-4 aspect-square w-full overflow-hidden rounded-lg">
-                  <Image src={p.image_url} alt={p.name} width={400} height={400} className="h-full w-full object-cover transition-transform duration-500 hover:scale-110" />
+                  <Image src={p.image_url} alt={p.name} width={400} height={400} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                 </div>
                 <span
                   className="mb-2 inline-block rounded-full px-3 py-1 text-[10px] font-semibold tracking-wide uppercase"
@@ -106,7 +109,7 @@ export default function ProductsPage() {
                 <p className="text-xs leading-relaxed" style={{ color: 'var(--pq-text-secondary)' }}>
                   {p.description}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         )}
