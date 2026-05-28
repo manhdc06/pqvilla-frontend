@@ -71,16 +71,15 @@ function getRemotePatterns() {
     });
   }
 
-  return IS_PRODUCTION
-    ? remotePatterns
-    : [
-        {
-          protocol: 'http',
-          hostname: '127.0.0.1',
-        },
-        {
-          protocol: 'http',
-          hostname: 'localhost',
-        },
-      ];
+  return [
+    ...remotePatterns,
+    {
+      protocol: 'http',
+      hostname: '127.0.0.1',
+    },
+    {
+      protocol: 'http',
+      hostname: 'localhost',
+    },
+  ];
 }
