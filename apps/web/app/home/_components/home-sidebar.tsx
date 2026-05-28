@@ -21,7 +21,7 @@ export function HomeSidebar(props: {
     <Sidebar collapsible={'icon'}>
       <SidebarHeader className={'h-16 justify-center'}>
         <div className={'flex items-center justify-between space-x-2'}>
-          <div>
+          <div className={'overflow-hidden'}>
             <AppLogo className={'max-w-full'} />
           </div>
         </div>

@@ -108,9 +108,10 @@ export default function AdminProjectsPage() {
             <select
               value={form.category}
               onChange={(e) => setForm({ ...form, category: e.target.value })}
-              className="w-full rounded border p-2.5 text-sm bg-zinc-900 text-white"
+              style={{ background: '#18181b', color: '#fff', colorScheme: 'dark' }}
+              className="w-full rounded border border-zinc-700 p-2.5 text-sm"
             >
-              {CATEGORIES.map((c) => <option key={c.value} value={c.value} className="bg-zinc-900 text-white">{c.label}</option>)}
+              {CATEGORIES.map((c) => <option key={c.value} value={c.value} style={{ background: '#18181b', color: '#fff' }}>{c.label}</option>)}
             </select>
           </div>
           <div>

@@ -93,9 +93,10 @@ export default function AdminProductsPage() {
             <select
               value={form.category}
               onChange={(e) => setForm({ ...form, category: e.target.value })}
-              className="w-full rounded border p-2.5 text-sm bg-zinc-900 text-white"
+              style={{ background: '#18181b', color: '#fff', colorScheme: 'dark' }}
+              className="w-full rounded border border-zinc-700 p-2.5 text-sm"
             >
-              {CATEGORIES.map((c) => <option key={c} className="bg-zinc-900 text-white">{c}</option>)}
+              {CATEGORIES.map((c) => <option key={c} style={{ background: '#18181b', color: '#fff' }}>{c}</option>)}
             </select>
           </div>
           <div className="sm:col-span-2">
