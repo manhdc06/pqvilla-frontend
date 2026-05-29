@@ -89,26 +89,18 @@ export default function ProductsPage() {
               <Link
                 key={p.id}
                 href={`/products/${p.id}`}
-                className="group rounded-xl border p-5 transition-all duration-300 hover:-translate-y-2 block"
+                className="group block overflow-hidden rounded-xl border transition-all duration-300 hover:-translate-y-1"
                 style={{ background: 'var(--pq-glass-bg)', borderColor: 'var(--pq-glass-border)' }}
                 onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--pq-accent)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'var(--pq-gold-glow)'; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--pq-glass-border)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none'; }}
               >
-                <div className="mb-4 aspect-square w-full overflow-hidden rounded-lg">
-                  <Image src={p.image_url} alt={p.name} width={400} height={400} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="aspect-square w-full overflow-hidden">
+                  <Image src={p.image_url} alt={p.name} width={400} height={400} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
-                <span
-                  className="mb-2 inline-block rounded-full px-3 py-1 text-[10px] font-semibold tracking-wide uppercase"
-                  style={{ background: 'rgba(200,155,94,0.15)', color: 'var(--pq-accent)' }}
-                >
-                  {p.category}
-                </span>
-                <h3 className="mb-2 text-sm font-bold tracking-wide uppercase" style={{ color: 'var(--pq-text-primary)' }}>
-                  {p.name}
-                </h3>
-                <p className="text-xs leading-relaxed" style={{ color: 'var(--pq-text-secondary)' }}>
-                  {p.description}
-                </p>
+                <div className="p-3">
+                  <p className="mb-1 text-[10px] font-semibold uppercase tracking-widest" style={{ color: 'var(--pq-accent)' }}>{p.category}</p>
+                  <h3 className="line-clamp-2 text-xs font-bold leading-tight uppercase" style={{ color: 'var(--pq-text-primary)' }}>{p.name}</h3>
+                </div>
               </Link>
             ))}
           </div>

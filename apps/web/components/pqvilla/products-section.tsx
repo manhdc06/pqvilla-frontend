@@ -57,41 +57,27 @@ export function ProductsSection() {
         ) : (
           <div className="mb-10 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
             {products.slice(0, 6).map((p) => (
-              <div
-                key={p.id}
-                className="cursor-pointer rounded-xl border p-5 transition-all duration-300 hover:-translate-y-2"
-                style={{
-                  background: 'var(--pq-glass-bg)',
-                  borderColor: 'var(--pq-glass-border)',
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--pq-accent)';
-                  (e.currentTarget as HTMLDivElement).style.boxShadow = 'var(--pq-gold-glow)';
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLDivElement).style.borderColor = 'var(--pq-glass-border)';
-                  (e.currentTarget as HTMLDivElement).style.boxShadow = 'none';
-                }}
+              <Link key={p.id}
+                href={`/products/${p.id}`}
+                className="group block overflow-hidden rounded-xl border transition-all duration-300 hover:-translate-y-1"
+                style={{ background: 'var(--pq-glass-bg)', borderColor: 'var(--pq-glass-border)' }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--pq-accent)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'var(--pq-gold-glow)'; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = 'var(--pq-glass-border)'; (e.currentTarget as HTMLAnchorElement).style.boxShadow = 'none'; }}
               >
-                <div className="mb-4 aspect-square w-full overflow-hidden rounded-lg">
+                <div className="aspect-square w-full overflow-hidden">
                   <Image
                     src={p.image_url}
                     alt={p.name}
                     width={300}
                     height={300}
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <h3
-                  className="mb-2 text-sm font-bold tracking-wide uppercase"
-                  style={{ color: 'var(--pq-text-primary)' }}
-                >
-                  {p.name}
-                </h3>
-                <p className="text-xs leading-relaxed" style={{ color: 'var(--pq-text-secondary)' }}>
-                  {p.description}
-                </p>
-              </div>
+                <div className="p-3">
+                  <p className="mb-1 text-[10px] font-semibold uppercase tracking-widest" style={{ color: 'var(--pq-accent)' }}>{p.category}</p>
+                  <h3 className="line-clamp-2 text-xs font-bold leading-tight uppercase" style={{ color: 'var(--pq-text-primary)' }}>{p.name}</h3>
+                </div>
+              </Link>
             ))}
           </div>
         )}
