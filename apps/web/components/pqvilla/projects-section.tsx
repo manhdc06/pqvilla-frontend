@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { API_URL } from '~/lib/api';
 
@@ -96,9 +97,10 @@ export function ProjectsSection() {
         ) : (
           <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
             {filtered.map((p) => (
-              <div
+              <Link
                 key={p.id}
-                className="group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-xl"
+                href={`/projects/${p.id}`}
+                className="group relative aspect-[4/3] block overflow-hidden rounded-xl"
               >
                 <Image
                   src={p.image_url}
@@ -108,17 +110,13 @@ export function ProjectsSection() {
                 />
                 <div
                   className="absolute inset-0 flex flex-col justify-end p-5 transition-all duration-300"
-                  style={{
-                    background:
-                      'linear-gradient(to top, rgba(7,11,18,0.9) 0%, transparent 60%)',
-                  }}
+                  style={{ background: 'linear-gradient(to top, rgba(7,11,18,0.9) 0%, transparent 60%)' }}
                 >
                   <h4 className="mb-1 text-sm font-semibold text-white">{p.name}</h4>
-                  <span className="text-xs" style={{ color: 'var(--pq-text-secondary)' }}>
-                    {p.location}
-                  </span>
+                  {p.location && <span className="text-xs" style={{ color: 'var(--pq-text-secondary)' }}>{p.location}</span>}
+                  <span className="mt-2 text-[10px] font-semibold uppercase tracking-widest opacity-0 transition-opacity duration-300 group-hover:opacity-100" style={{ color: 'var(--pq-accent)' }}>Xem chi tiết →</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}
