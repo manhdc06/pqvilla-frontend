@@ -99,7 +99,8 @@ export default function ProductsPage() {
                 </div>
                 <div className="p-3">
                   <p className="mb-1 text-[10px] font-semibold uppercase tracking-widest" style={{ color: 'var(--pq-accent)' }}>{p.category}</p>
-                  <h3 className="line-clamp-2 text-xs font-bold leading-tight uppercase" style={{ color: 'var(--pq-text-primary)' }}>{p.name}</h3>
+                  <h3 className="mb-1 line-clamp-2 text-xs font-bold leading-tight uppercase" style={{ color: 'var(--pq-text-primary)' }}>{p.name}</h3>
+                  {p.description && <p className="line-clamp-2 text-[11px] leading-relaxed" style={{ color: 'var(--pq-text-secondary)' }}>{p.description}</p>}
                 </div>
               </Link>
             ))}
